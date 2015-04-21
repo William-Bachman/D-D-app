@@ -77,6 +77,7 @@ var postWarrior = function (data) {
     request.send(JSON.stringify(data));
    
 }
+// This gets the latest information
 var getWarriors = function () {
     var request = new XMLHttpRequest();
     request.open('GET', firebaseURL + '.json', true);
@@ -86,6 +87,7 @@ var getWarriors = function () {
             for (var propName in response) {
                 response[propName].key = propName;
                 warrior.push(response[propName]);
+                setTimeout(doPoll, 6000);
             }
             printWarriors();
         }
@@ -95,6 +97,7 @@ var getWarriors = function () {
     }
     request.send();
 }
+// This puts the edited information on the noSQL server
 var putWarrior = function (data, i) {
     var key = warrior[i].key;
     var request = new XMLHttpRequest();
@@ -111,7 +114,7 @@ var putWarrior = function (data, i) {
     }
     request.send(JSON.stringify(data));
 }
-
+// this is the edit function for each element on the DIV
 var editWarrior = function (i) {
     document.getElementById('editName').value = warrior[i].name;
     $('#editRace').val(warrior[i].race);
@@ -133,7 +136,7 @@ var saveEdit = function (i) {
     var newPlayer = new player(name, race, level, experience, alignment, gamer);
     putWarrior(newPlayer, i);
 }
-
+//This deletes the information from our noSQL server
 var deleteWarrior = function (i) {
     var request = new XMLHttpRequest();
     request.open('DELETE', firebaseURL + warrior[i].key + '/.json', true);
