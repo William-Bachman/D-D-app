@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="css.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-group">
+        <b>Character Name</b> <input class="form-control" id="inputName" placeholder="Character Name....." />
+        <b>Race</b><input class="form-control" id="inputRace" placeholder="Character Race....." />
+        <b>Level</b><input class="form-control" id="inputLevel" placeholder="Level.." />
+        <b>XP</b><input class="form-control" id="inputExperience" placeholder="Experience....." />
+        <b>Alignment</b> <input class="form-control" id="inputAlignment" placeholder="Tell us your alignment..." />
+        <b>Player name</b><input class="form-control" id="inputPlayerID" placeholder="Player Name....." />
+        <button class="btn btn-default" onclick="addWarrior()">Add your warrior</button>
+        <a href="dice roller.html">Dice Roller</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th><i>Character</i></th>
+                <th><i>Race</i></th>
+                <th><i>Level</i></th>
+                <th><i>XP</i></th>
+                <th><i>Alignment</i></th>
+                <th><i>Player</i></th>
+                <th>Buttons</th>
+            </tr>
+        </thead>
+        <tbody id="DisplayWarriors"></tbody>
+    </table>
+
+    div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Contact</h4>
+            </div>
+            <div class="modal-body">
+                <i>Character:</i><input placeholder="Name..." class="form-control" id="editName" />
+                <i>Level:</i><input placeholder="Level Up?..." class="form-control" id="editLevel" />
+                <i>XP:</i><input placeholder="Gain more experience..." class="form-control" id="editExperience" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <span id="SaveEditButton"></span>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.3.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
