@@ -13,6 +13,21 @@ var rollD6 = function (){
     die6.innerHTML = d6;
     StatusD6.innerHTML = "You rolled "+ d6 +".";
 }
+var rollD8 = function () {
+    var die8 = document.getElementById('d8');
+    var status = document.getElementById('StatusD8');
+    var d8 = Math.floor(Math.random() * 8) + 1;
+    die8.innerHTML = d8;
+    StatusD8.innerHTML = "You rolled " + d8 + ".";
+}
+
+var rollD10 = function () {
+    var die10 = document.getElementById('d10');
+    var status = document.getElementById('StatusD10');
+    var d10 = Math.floor(Math.random() * 10) + 1;
+    die10.innerHTML = d10;
+    StatusD10.innerHTML = "You rolled " + d10 + ".";
+}
 var rollD12 = function (){
     var die12= document.getElementById('d12');
     var status = document.getElementById('StatusD12'); 
@@ -20,6 +35,7 @@ var rollD12 = function (){
     die12.innerHTML = d12;
     StatusD12.innerHTML = "You rolled "+ d12 +".";
 }
+
 var rollD20 = function () {
     var die20 = document.getElementById('d20');
     var status = document.getElementById('StatusD20');

@@ -41,11 +41,18 @@ var printWarriors = function () {
         elemString += '<td>' + warrior[i].level + '</td>'
         elemString += '<td>' + warrior[i].experience + '</td>'
         elemString += '<td>' + warrior[i].alignment + '</td>'
-        elemString += '<td>' + warrior[i].playerID + '</td>'
+        elemString += '<td>' + warrior[i].gamer + '</td>'
         elemString += '<td><button class="btn btn-warning" onclick="editWarrior(' + i + ')">Level Up</button><button class="btn btn-danger" onclick="deleteWarrior('+i+')">Delete</button></td>'
         elemString += '</tr>'
     }
+    
     $('#DisplayWarriors').html(elemString);
+}
+
+warrior.sort = function(a,b) {
+    a.level = level
+    b.level = level
+    return a - b;
 }
 
 
@@ -111,9 +118,10 @@ var editWarrior = function (i) {
 
 var saveEdit = function (i) {
     var name = $('#editName').val();
+    var race = $('#editRace').val();
     var experience = $('#editExperience').val();
     var level = $('#editlevel').val();
-    var newPlayer = new player(name, experience, level);
+    var newPlayer = new player(name, race, experience, level);
     putWarrior(newPlayer, i);
 }
 
