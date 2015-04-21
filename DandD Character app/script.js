@@ -114,16 +114,16 @@ var saveEdit = function (i) {
     var experience = $('#editExperience').val();
     var level = $('#editlevel').val();
     var newPlayer = new player(name, experience, level);
-    putContact(newContact, i);
+    putWarrior(newPlayer, i);
 }
 
 var deleteWarrior = function (i) {
     var request = new XMLHttpRequest();
-    request.open('DELETE', firebaseUrl + warrior[i].key + '/.json', true);
+    request.open('DELETE', firebaseURL + warrior[i].key + '/.json', true);
     request.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             warrior.splice(i, 1);
-            PrintWarriors();
+            printWarriors();
         }
     }
     request.send();
