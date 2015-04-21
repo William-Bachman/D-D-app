@@ -42,7 +42,5 @@ var rollD20 = function () {
     var d20 = Math.floor(Math.random() * 20) + 1;
     die20.innerHTML =  d20;
     status.innerHTML = "You rolled " + d20 + ".";
-    if (d20 > 19) {
-        Status.innerHTML = "You rolled a natural 20";
-    }
+    if (d20 === 20){aler}
 }
