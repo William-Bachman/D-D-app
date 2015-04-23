@@ -8,11 +8,23 @@
 <body>
     <button class=" btn badge" id="DiceButton"><a href="dice roller.html"> dice roller </a></button>
     <div class="form-group" id="arena">
-        <b>Character Name</b> <input class="form-control" id="inputName" color ="grey" placeholder="Character Name....." />
+        <b>Character Name</b> <input class="form-control" id="inputName" color="grey" placeholder="Character Name....." />
         <b>Race</b><input class="form-control" id="inputRace" placeholder="Character Race....." />
         <b>Level</b><input class="form-control" id="inputLevel" placeholder="Level.." />
         <b>XP</b><input class="form-control" id="inputExperience" placeholder="Experience....." />
-        <b>Alignment</b> <input class="form-control" id="inputAlignment" placeholder="Tell us your alignment..." />
+        <b>Alignment</b> <select class="dropdown-menu-left" id="inputAlignment">
+            <option value="Lawful Good">Lawful Good</option>
+            <option value="Neutral Good">Nuetral Good</option>
+            <option value="Chaotic Good">Chaotic Good</option>
+            <option value="Lawful Neutral">Lawful Neutral</option>
+            <option value="True Neutral">True Neutral</option>
+            <option value="Chaotic Neutral">Chaotic Neutral</option>
+            <option value="Lawful Evil">Lawful Evil</option>
+            <option value="Neutral Evil">Neutral Evil</option>
+            <option value="Chaotic Evil">Chaotic Evil</option>
+        </select>
+        <br />
+        <br />
         <b>Player name</b><input class="form-control" id="inputPlayerID" placeholder="Player Name....." />
         <button class="btn btn-danger" onclick="addWarrior()">Add your warrior</button>
     </div>
@@ -43,7 +55,19 @@
                     <i>Race</i><input placeholder=" Race....." class="form-control" id="editRace" />
                     <i>Level:</i><input placeholder="Level Up?..." class="form-control" id="editLevel" />
                     <i>XP:</i><input placeholder="Gain more experience..." class="form-control" id="editExperience" />
-                    <i>Alignment</i> <input class="form-control" id="editAlignment" placeholder="Tell us your alignment..." />
+                    <i>Alignment</i> <select id="editAlignment">
+                        <option value="Lawful Good">Lawful Good</option>
+                        <option value="Neutral Good">Nuetral Good</option>
+                        <option value="Chaotic Good">Chaotic Good</option>
+                        <option value="Lawful Neutral">Lawful Neutral</option>
+                        <option value="True Neutral">True Neutral</option>
+                        <option value="Chaotic Neutral">Chaotic Neutral</option>
+                        <option value="Lawful Evil">Lawful Evil</option>
+                        <option value="Neutral Evil">Neutral Evil</option>
+                        <option value="Chaotic Evil">Chaotic Evil</option>
+                    </select>
+                    <br />
+                    <br />
                     <i>Player name</i><input class="form-control" id="editPlayerID" placeholder="Player Name....." />
                 </div>
                 <div class="modal-footer">
