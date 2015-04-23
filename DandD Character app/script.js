@@ -35,6 +35,7 @@ var addWarrior = function () {
     $('#inputPlayerID').val('');
  
 }
+//prints objects to the innerhtml
 var printWarriors = function () {
     $('#DisplayWarriors').html = ('');
     var elemString = '';
@@ -53,13 +54,8 @@ var printWarriors = function () {
     $('#DisplayWarriors').html(elemString);
 }
 
-warrior.sort = function(a,b) {
-    a.level = level
-    b.level = level
-    return a - b;
-}
 
-
+// sends the item to the NoSQL database
 var postWarrior = function (data) {
     var request = new XMLHttpRequest();
     request.open('POST', firebaseURL + '.json', true);
@@ -87,7 +83,6 @@ var getWarriors = function () {
             for (var propName in response) {
                 response[propName].key = propName;
                 warrior.push(response[propName]);
-                setTimeout(doPoll, 6000);
             }
             printWarriors();
         }
@@ -126,6 +121,7 @@ var editWarrior = function (i) {
     $('#myModal').modal('toggle');
 }
 
+// this is the function to save the edit to the div
 var saveEdit = function (i) {
     var name = $('#editName').val();
     var race = $('#editRace').val();
@@ -148,5 +144,8 @@ var deleteWarrior = function (i) {
     }
     request.send();
 }
-
+warrior.sort(function (a, b) {
+    a.level - b.level
+    return (a - b);
+});
 getWarriors();

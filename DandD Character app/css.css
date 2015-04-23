@@ -1,3 +1,38 @@
 ﻿body  {
-    
+	background-color: #DCDCDC;
+	outline-color:ghostwhite;
+}
+#DisplayWarriors{
+
+	background-color: #DCDCDC;
+	outline-color:ghostwhite;
+}
+#arena{
+	background-image: url('http://fc01.deviantart.net/fs30/i/2010/053/7/0/Ice_Dragons_by_Ultyzarus.jpg')
+}
+#inputName{
+	background-color: #D3D3D3
+}
+#inputLevel{
+	background-color: #D3D3D3
+}
+#inputRace{
+	background-color: #D3D3D3
+}
+#inputAlignment{
+	background-color: #D3D3D3
+}
+#inputExperience{
+	background-color: #D3D3D3
+}
+#inputPlayerID{
+	background-color: #D3D3D3
+}
+thead{
+	background-color: #DCDCDC;
+	outline-color:ghostwhite;
+}
+#DiceButton{
+	background-color:Red;
+		
 }
