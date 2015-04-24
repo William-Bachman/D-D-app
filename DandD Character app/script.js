@@ -56,21 +56,21 @@ var printWarriors = function () {
 
 
 // sends the item to the NoSQL database
-var postWarrior = function (data) {
+var postWarrior = function (addWarrior) {
     var request = new XMLHttpRequest();
     request.open('POST', firebaseURL + '.json', true);
     request.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             var response = JSON.parse(this.response);
-            data.key = response.name
-            warrior.push(data);
+            addWarrior.key = response.name
+            warrior.push(addWarrior);
             printWarriors();
         }
         else{
             console.error(this.response);
         }
     }
-    request.send(JSON.stringify(data));
+    request.send(JSON.stringify(addWarrior));
    
 }
 // This gets the latest information
@@ -121,7 +121,7 @@ var editWarrior = function (i) {
     $('#myModal').modal('toggle');
 }
 
-// this is the function to save the edit to the div
+// this is the function to save the edit to the div getting information from the Modal
 var saveEdit = function (i) {
     var name = $('#editName').val();
     var race = $('#editRace').val();
@@ -144,8 +144,6 @@ var deleteWarrior = function (i) {
     }
     request.send();
 }
-warrior.sort(function (a, b) {
-    a.level - b.level
-    return (a - b);
-});
+
+// this is calling the get function
 getWarriors();
